@@ -34,3 +34,6 @@
 2.终端操作
     ｜-非短路操作：forEach/collect/count等
     ｜-短路操作：anyMatch/findFirst/findAny等
+    
+流等各种操作
+![](/image1/C6A2C0491CC2B221F958D27AC70B08B5.jpg)
