@@ -24,3 +24,13 @@
 2.中间操作 filter——>sorted->map
 
 3.终端操作 collect
+
+
+### 流操作的分类
+1.中间操作
+    ｜-filter/map/peek等
+    ｜-distinct/sorted/limit等
+
+2.终端操作
+    ｜-非短路操作：forEach/collect/count等
+    ｜-短路操作：anyMatch/findFirst/findAny等
