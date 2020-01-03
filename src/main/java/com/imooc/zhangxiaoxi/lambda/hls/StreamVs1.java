@@ -39,7 +39,7 @@ public class StreamVs1 {
             }
         }
 
-        //两个最贵,sort
+        //sort
         notBooksSkuList.sort(new Comparator<Sku>() {
             @Override
             public int compare(Sku o1, Sku o2) {
@@ -86,17 +86,23 @@ public class StreamVs1 {
         AtomicReference<Double> money = new AtomicReference<Double>(Double.valueOf(0.0));
         List<String> carNameList = CartService.getCartSkuList()
                 .stream()
+                //print
                 .peek(sku -> System.out.println(JSON.toJSONString(sku, true)))
+                //filter sku
                 .filter(sku -> !SkuCategoryEnum.BOOKS.equals(sku.getSkuCategory()))
+                //sorted price
                 .sorted(Comparator.comparing(Sku::getTotalPrice).reversed())
+                //top 2
                 .limit(2)
+                //
                 .peek(sku -> money.set(money.get() + sku.getTotalPrice()))
+                //get name
                 .map(sku -> sku.getSkuName())
                 .collect(Collectors.toList());
 
         System.out.println(
                 JSON.toJSONString(carNameList, true));
-        System.out.println("商品总价" + money.get());
+        System.out.println("total:" + money.get());
     }
 
 

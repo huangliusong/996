@@ -7,9 +7,7 @@ import com.imooc.zhangxiaoxi.lambda.cart.SkuCategoryEnum;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author huangliusong
@@ -109,5 +107,85 @@ public class StreamOperator {
                 .forEach(item -> System.out.println(JSON.toJSONString(item)));
     }
 
+
+    /**
+     * 短路操作,第一个不满足就返回
+     */
+    @Test
+    public void allMatchTest() {
+        boolean match = list.stream()
+                .peek(sku -> System.out.println(sku.getTotalPrice()))
+                .allMatch(sku -> sku.getTotalPrice() > 100);
+        System.out.println(match);
+    }
+
+
+    /**
+     * 是不是有？
+     */
+    @Test
+    public void anyMatchTest() {
+        boolean match = list.stream()
+                .peek(sku -> System.out.println(sku.getTotalPrice()))
+                .anyMatch(sku -> sku.getTotalPrice() > 100);
+        System.out.println(match);
+
+    }
+
+
+    /**
+     * 都不匹配
+     */
+    @Test
+    public void noMatchTest() {
+        boolean match = list.stream()
+                .peek(sku -> System.out.println(sku.getTotalPrice()))
+                .noneMatch(sku -> sku.getTotalPrice() > 100);
+        System.out.println(match);
+
+    }
+
+    /**
+     * find first
+     */
+    @Test
+    public void findFirstTest() {
+        Optional<Sku> sku = list.stream()
+                .findFirst();
+        System.out.println(sku.get().getSkuName());
+
+    }
+
+
+    /**
+     * zhaodiyige
+     */
+    @Test
+    public void findAnyTest() {
+        Optional<Sku> sku = list.stream()
+                .findAny();
+        System.out.println(sku.get().getSkuName());
+
+    }
+
+
+    @Test
+    public void maxTest() {
+        OptionalDouble optionalDouble = list.stream()
+                .mapToDouble(Sku::getTotalPrice)
+                .max();
+        System.out.println(optionalDouble.getAsDouble());
+
+    }
+
+
+    @Test
+    public void minTest() {
+        OptionalDouble optionalDouble = list.stream()
+                .mapToDouble(Sku::getTotalPrice)
+                .min();
+        System.out.println(optionalDouble.getAsDouble());
+
+    }
 
 }
