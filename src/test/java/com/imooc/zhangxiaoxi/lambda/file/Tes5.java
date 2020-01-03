@@ -17,6 +17,7 @@ public class Tes5 {
         FileService fileService = new FileService();
         fileService.fileHandler("/Users/liusonghuang/Downloads/run.py",
                 fileContent -> {
+            //输出
             System.err.println(fileContent);
         });
     }
