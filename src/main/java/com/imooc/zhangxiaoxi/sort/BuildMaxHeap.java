@@ -37,7 +37,6 @@ public class BuildMaxHeap {
         A[k] = A[0];//被筛选结点的值放入最终位置
 
 
-
         for (int p=1;p<=len;p++){
             System.out.print("  "+A[p]);
         }
