@@ -71,7 +71,7 @@ public class BuildMaxHeap {
             k = i;
             i = k / 2;
         }
-        A[k] = A[0];
+        A[k] = A[0];//复制到最终到位置
     }
 
 }
