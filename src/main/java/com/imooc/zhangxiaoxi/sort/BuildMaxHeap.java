@@ -6,6 +6,11 @@ package com.imooc.zhangxiaoxi.sort;
  * {@link }
  */
 public class BuildMaxHeap {
+
+    public static void main(String[] args) {
+        int[] A = new int[]{0, 53, 17, 78, 9, 45, 65, 87, 32};
+        BuildMaxH(A, 8);
+    }
     public static void BuildMaxH(int A[], int len) {
         //
         for (int i = len / 2; i > 0; i--) {
