@@ -9,6 +9,7 @@ public class SelectSimple {
 
     public static void main(String[] args) {
         int[] arr = new int[]{2, 4, 1, 8, 0, 34, 78, 3};
+
         SelectSort(arr,arr.length);
     }
 
@@ -30,6 +31,7 @@ public class SelectSimple {
         for (int k=0;k<n;k++){
             System.out.print("  "+A[k]);
         }
+
 
     }
 }
