@@ -5,14 +5,27 @@ package com.imooc.zhangxiaoxi.sort;
  * @since 2020/5/16
  * {@link }
  */
-public class Merge {
-    private Integer[] B = new Integer[8];
+public class MergerFunction {
+    private static Integer[] B = new Integer[8];
 
     public static void main(String[] args) {
-
+        Integer[] A = new Integer[]{49, 38, 65, 97, 76, 13, 27};
+        MergeSort(A, 0, 6);
+        for (int i = 0; i < A.length; i++) {
+            System.out.print(" " + A[i]);
+        }
     }
 
-    void MergeEle(Integer[] A, int low, int mid, int high) {
+    public static void MergeSort(Integer A[], int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
+            MergeSort(A, low, mid);
+            MergeSort(A, mid + 1, high);
+            Merger(A, low, mid, high);
+        }
+    }
+
+    public static void Merger(Integer[] A, int low, int mid, int high) {
         int i, j, k;
         for (k = low; k <= high; k++) {
             B[k] = A[k];//把A中的元素全部复制到B
