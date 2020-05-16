@@ -8,7 +8,7 @@ package com.imooc.zhangxiaoxi.sort;
 public class SelectSimple {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 4, 1, 8, 34, 78, 3};
+        int[] arr = new int[]{2, 4, 1, 8, 0, 34, 78, 3};
         SelectSort(arr,arr.length);
     }
 
@@ -17,7 +17,9 @@ public class SelectSimple {
         for (int i = 0; i < n - 1; i++) {
             int min = i;
             for (int j = i + 1; j < n; j++) {
-                if (A[j] < A[min]) min = j;
+                if (A[j] < A[min]) {
+                    min = j;
+                }
             }
             if (min != i) {
                 int temp = A[i];
