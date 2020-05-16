@@ -11,6 +11,7 @@ public class BuildMaxHeap {
         int[] A = new int[]{0, 53, 17, 78, 9, 45, 65, 87, 32};
         BuildMaxH(A, 8);
     }
+
     public static void BuildMaxH(int A[], int len) {
         //
         for (int i = len / 2; i > 0; i--) {
@@ -37,8 +38,8 @@ public class BuildMaxHeap {
         A[k] = A[0];//被筛选结点的值放入最终位置
 
 
-        for (int p=1;p<=len;p++){
-            System.out.print("  "+A[p]);
+        for (int p = 1; p <= len; p++) {
+            System.out.print("  " + A[p]);
         }
         System.out.println();
     }
