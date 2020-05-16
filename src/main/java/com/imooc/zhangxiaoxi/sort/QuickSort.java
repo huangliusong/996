@@ -16,8 +16,8 @@ public class QuickSort {
 
     public static void QuickSortFun(int A[], int low, int high) {
         if (low<high){
-            int pivotpos = Partition(A, low, high);
-            QuickSortFun(A, low, pivotpos - 1);
+            int pivot = Partition(A, low, high);
+            QuickSortFun(A, low, pivot - 1);
         }
         for (int k = 0; k < A.length; k++) {
             System.out.print("  " + A[k]);
