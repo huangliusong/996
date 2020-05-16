@@ -61,4 +61,17 @@ public class BuildMaxHeap {
         A[i1] = temp;
     }
 
+    public static void AdjustUp(Integer A[], int k) {
+        A[0] = A[k];
+        //如果双亲结点小，则将双亲结点向下调整，并继续向上比较
+        int i = k / 2;
+        while (i > 0 && A[i] < A[0]) {
+            //双亲结点向下调
+            A[k] = A[i];
+            k = i;
+            i = k / 2;
+        }
+        A[k] = A[0];
+    }
+
 }
