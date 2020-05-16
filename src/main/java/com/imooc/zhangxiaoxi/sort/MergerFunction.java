@@ -16,6 +16,7 @@ public class MergerFunction {
         }
     }
 
+    //这个一个递归算法
     public static void MergeSort(Integer A[], int low, int high) {
         if (low < high) {
             int mid = (low + high) / 2;
